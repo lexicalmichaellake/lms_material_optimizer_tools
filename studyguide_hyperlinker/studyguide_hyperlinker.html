@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p><strong>Step 1:</strong> Type your desired page number here (e.g., "17")</p>
+<input type="text" id="pageNum" name="pageNum" value="[page number here]">
+<p><strong>Step 2:</strong> Type a description the desired textbook area here (e.g., "The verb <em>ser</em>.".</p>
+<input type="text" id="guideText" name="guideText" value="[topic description here]">
+
+
+<p><strong>Step 3:</strong> Click on the following button</p>
+
+<button onclick="studyGen()">Generate study guide hyperlink.</button>
+
+<p><strong>Step 4a:</strong> Copy the following code here into the HTML code of your study guide. <strong>OR</strong></p>
+
+<textarea rows="5" cols="50" id="code"></textarea><br />
+<p><strong>Step 4b:</strong> Select and copy (using Ctrl + C or right-click -> Copy) the following link if you are using design view (i.e., the one that you start with when creating/editing a new file/page) in iCollege/Brightspace: </p><p id="demo"></p>
+
+<script>
+function studyGen() {
+  var x = document.getElementById("pageNum").value;
+  var y = document.getElementById("guideText").value;
+  document.getElementById("code").innerHTML = '<a href="https://reader.vhlcentral.com/aventuras5e/student-edition/ave5e_vtext?rid=0&page=' + x + '">' + y + '</a>';
+  document.getElementById("demo").innerHTML = '<a href="https://reader.vhlcentral.com/aventuras5e/student-edition/ave5e_vtext?rid=0&page=' + x + '">' + y + '</a>';
+}
+</script>
+</body>
+</html>

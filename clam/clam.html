@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<div>
+<strong>Step 1:</strong> Insert a VHLCentral Activity URL here:<br /><textarea type="text" id="urlList" name="urlList" oninput="linkBuilder()" value="https://m3a.vhlcentral.com/sections/0/activities/131886" rows="4" cols="50">https://m3a.vhlcentral.com/sections/0/activities/131886</textarea><br />
+<strong>Step 2:</strong> Enter your 6-digit VHL Course Section Number here:<br /><input type="text" id="sectNum" name="sectNum" oninput="linkBuilder()" value="000001" /><br />
+<strong>Step 3:</strong>  Enter the Activity Title here:<br /><input type="text" id="actName" name="actName" oninput="linkBuilder()" value="¡Manos a la obra!" />
+</div>
+<strong>Step 4a:</strong> Select and copy the following link; paste it into your iCollege or other LMS page:<p id="copyLink"><a href="https://m3a.vhlcentral.com/sections/000001/activities/131886">¡Manos a la obra!</a></p><strong>OR</strong>
+<br />
+<strong>Step 4b:</strong> Copy the following code into the HTML view of your desired instructional webpage<br /><textarea cols="100" rows="10" id="code"><a href="https://m3a.vhlcentral.com/sections/000001/activities/131886">¡Manos a la obra!</a></textarea>
+
+<script>
+function linkBuilder() {
+  var x = document.getElementById("urlList").value;
+  var y = document.getElementById("sectNum").value;
+  var z = document.getElementById("actName").value;
+  var res = x.replace("\/sections\/0", "\/sections\/" + y);
+  document.getElementById("copyLink").innerHTML = "<a href=\"" + res + "\">" + z + "</a>";
+  document.getElementById("code").innerHTML = "<a href=\"" + res + "\">" + z + "</a>";
+
+}
+</script>
+
+</body>
+</html>
